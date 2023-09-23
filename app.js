@@ -5,7 +5,7 @@ const { google } = require('googleapis');
 const app = express();
 const port = process.env.PORT || 8080;
 
-const serviceAccountKeyFile = "./credentials.json"
+const serviceAccountKeyFile = JSON.parse(process.env.MY_CREDENTIALS)
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
