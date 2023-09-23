@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 async function getGoogleSheetClient() {
     const auth = new google.auth.GoogleAuth({
-      keyFile: serviceAccountKeyFile,
+      credentials: serviceAccountKeyFile,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
     const authClient = await auth.getClient();
